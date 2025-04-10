@@ -4,6 +4,7 @@
   "description": "foundations of react ",
  
   "scripts": {
+    "start": "parcel src/index.html",
     "test": "jest"
   },
   "author": "Rahul Nizare",
