@@ -2,7 +2,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 // import UserClass from "./components/UserClass";
 import { createRoot } from "react-dom/client";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useContext } from "react";
+import UserContext from "./utils/UserContext";
 
 function App() {
   // const arr = [1,2,3]
@@ -19,9 +20,11 @@ function App() {
 
   // }
   const UserClass = lazy(() => import("./components/UserClass"));
+  const {name} = useContext(UserContext)
   return (
     <>
       {/* {btn} */}
+      <h3>App Name :{ name}</h3>
       <Suspense fallback={<h1>Loading...</h1>}>
         <UserClass name="Rahul Nizare" location="surat" />
       </Suspense>
